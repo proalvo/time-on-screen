@@ -9,6 +9,7 @@ cd time-on-screen (wherever it is))
 npm install serialport
 
 ## List available port 
+'''
 SerialPort.list().then(ports => {
   ports.forEach(function(port) {
     console.log(port);
@@ -17,3 +18,4 @@ SerialPort.list().then(ports => {
     console.log(port.manufacturer);
   });
 });
+'''
