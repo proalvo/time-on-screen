@@ -1,8 +1,9 @@
 # time-on-screen (work in progress)
-This is node.js app to show timer/time on screen. Source of time is github.com/proalvo/canoe-freestyle-timer 
+This is node.js app to show timer/time on screen for live streaming of the competition. Source of time is github.com/proalvo/canoe-freestyle-timer.  
 - Connect to usb serial port
 - Recieve time from timer via usb serial port
 - Display time on screen.
+- Add display as browser source on OBS Studio or any toher straemin software
 
 ## Setup
 install serialport
