@@ -1,0 +1,43 @@
+<html>
+
+<head>
+  <!-- link rel="stylesheet" href="/styles.css" -->
+<style>
+.time {
+        font-family: sans-serif; 
+        font-weight: bold;
+        width: 150;
+        height: 65;
+        position: fixed;
+        padding: 10px;
+        bottom: 100; /* pixels from bottom */
+        right: 100;  /* pixels from right edge to right border*/      
+        background-color: #aa0000;
+        font-size: 60px;
+        color: white;
+        text-align: center;
+        display: none;
+}    
+</style>
+<script>
+    let webSocket = new WebSocket(location.origin.replace(/^http/, 'ws'));
+    let doc;
+
+    webSocket.onmessage = (event) => {
+      if ( event.data >= 0 && event.data <= 45) {
+        doc = document.getElementById('time');
+        doc.innerHTML= event.data;
+        doc.style.display="block";
+      } 
+      else if ( event.data == "XX" ) {
+        doc = document.getElementById('time');
+        doc.innerHTML= event.data;
+        doc.style.display="none";
+      } 
+    };
+</script>
+</head>
+<body>
+  <div id="time" class="time"></div>
+</body>
+</html>
